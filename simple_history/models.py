@@ -109,7 +109,7 @@ class HistoricalRecords(object):
         app_module = '%s.models' % model._meta.app_label
         if model.__module__ != self.module:
             # registered under different app
-            attrs['__module__'] = self.module
+            attrs['__module__'] = model.__module__
         elif app_module != self.module:
             try:
                 # Abuse an internal API because the app registry is loading.
